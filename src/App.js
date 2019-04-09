@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import MovieCard from "./MovieCard"
+import MovieCard from "./MovieCard.js"
 
 
 /*
