@@ -2,7 +2,10 @@ import React, { Component } from "react";
 
 class MovieCard extends Component {
   render() {
-      return (<p> Hello </p>);
+
+    const { movie } = this.props;
+
+      return (<li> {movie.name} </li>);
   }
 }
 

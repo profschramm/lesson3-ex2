@@ -103,7 +103,22 @@ const movies = {
 class App extends Component {
   render() {
     return (
-     <MovieCard />
+      <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="App-title">Lesson 3 - Exercise 2</h1>
+      </header>
+      <h2>How Popular is Your Favorite Movie?</h2>
+
+      <ul>
+            <li key={movies[1].id}>
+            {movies[1].name}
+          </li>
+          {Object.keys(movies).map( (key) => (
+            <li> {movies[key].name}</li>
+          ))};
+      </ul>
+      </div>
     );
   }
 }
