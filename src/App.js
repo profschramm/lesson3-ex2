@@ -101,16 +101,30 @@ const movies = {
 };
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.usersByMovie = {};
+
+    profiles.forEach( profile => {
+      const movieID = profile.favoriteMovieID;
+      if (this.usersByMovie[movieID]) {
+        this.usersByMovie[movieID].push(profile.userID);
+      } else {
+        this.usersByMovie[movieID] = [profile.userID];
+      }
+    })
+  }
   render() {
     return (
       <div className="App">
 
-      <h2>How Popular is Your Favorite Movie?</h2>
+    <h2>How Popular is Your Favorite Movie?</h2>
 
       <ul>
           {Object.keys(movies).map( (key) => (
-            <MovieCard movie={movies[key]} />
-          ))};
+            <MovieCard movie={movies[key]} allUsers={users} userList={this.usersByMovie} />
+          ))}
       </ul>
       </div>
     );
@@ -126,3 +140,5 @@ export default App;
 */
 
 //<li> {movies[key].name}</li>
+
+//            <MovieCard movie={movies[key]} allUsers={users} userList={this.usersByMovie[key]} />
