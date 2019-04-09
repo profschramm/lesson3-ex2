@@ -104,18 +104,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Lesson 3 - Exercise 2</h1>
-      </header>
+
       <h2>How Popular is Your Favorite Movie?</h2>
 
       <ul>
-            <li key={movies[1].id}>
-            {movies[1].name}
-          </li>
           {Object.keys(movies).map( (key) => (
-            <li> {movies[key].name}</li>
+            <MovieCard movie={movies[key]} />
           ))};
       </ul>
       </div>
@@ -124,4 +118,11 @@ class App extends Component {
 }
 
 export default App;
+/*
+<header className="App-header">
+   <img src={logo} className="App-logo" alt="logo" /> 
+        <h1 className="App-title">Lesson 3 - Exercise 2</h1>
+      </header>
+*/
 
+//<li> {movies[key].name}</li>

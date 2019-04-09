@@ -5,7 +5,7 @@ class MovieCard extends Component {
 
     const { movie } = this.props;
 
-      return (<li> {movie.name} </li>);
+      return (<li key={movie.id}> {movie.name} </li>);
   }
 }
 
